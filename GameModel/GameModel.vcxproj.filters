@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\scene">
+      <UniqueIdentifier>{ab311df9-067a-4b0a-a179-7fbffa43f793}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -20,20 +23,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Scene.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="GameScene.h">
+      <Filter>头文件\scene</Filter>
     </ClInclude>
     <ClInclude Include="MenuScene.h">
-      <Filter>头文件</Filter>
+      <Filter>头文件\scene</Filter>
     </ClInclude>
-    <ClInclude Include="GameScene.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="Scene.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSceneEnums.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectorScene.h">
+      <Filter>头文件\scene</Filter>
     </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="GameSceneEnums.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="OverScene.h">
+      <Filter>头文件\scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,7 +5,9 @@
 #include"GameScene.h"
 
 extern Scene* menuScene;
+extern Scene* selectorScene;
 extern Scene* gameScene;
+extern Scene* overScene;
 
 // 游戏场景管理器
 class SceneManager {
@@ -28,8 +30,14 @@ public:
 		case SceneEnums::MENU:
 			currentScene = menuScene;
 			break;
+		case SceneEnums::SELECTOR:
+			currentScene = selectorScene;
+			break;
 		case SceneEnums::GAME:
 			currentScene = gameScene;
+		case SceneEnums::OVER:
+			currentScene = overScene;
+			break;
 		default:
 			break;
 		}

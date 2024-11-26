@@ -1,11 +1,15 @@
 #include<graphics.h>
 #include"Scene.h"
 #include"MenuScene.h"
+#include"SelectorScene.h"
 #include"GameScene.h"
+#include"OverScene.h"
 #include"SceneManager.h"
 
 Scene* menuScene = nullptr;
+Scene* selectorScene = nullptr;
 Scene* gameScene = nullptr;
+Scene* overScene = nullptr;
 SceneManager sceneManager;
 
 int main() {
@@ -14,9 +18,11 @@ int main() {
 	const int FPS = 60;
 
 	// 初始化游戏
-	initgraph(WIDTH, HEIGHT,EW_SHOWCONSOLE);
-	menuScene=new MenuScene();
-	gameScene=new GameScene();
+	initgraph(WIDTH, HEIGHT, EW_SHOWCONSOLE);
+	menuScene = new MenuScene();
+	selectorScene = new SelectorScene();
+	gameScene = new GameScene();
+	overScene = new OverScene();
 	ExMessage msg;
 	BeginBatchDraw();
 
@@ -35,7 +41,7 @@ int main() {
 
 		static DWORD lastTickTime = GetTickCount();
 		DWORD currentTickTime = GetTickCount();
-		sceneManager.onUpdate(currentTickTime-lastTickTime);
+		sceneManager.onUpdate(currentTickTime - lastTickTime);
 		lastTickTime = currentTickTime;
 
 		cleardevice();
