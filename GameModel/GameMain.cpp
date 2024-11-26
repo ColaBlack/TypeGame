@@ -27,6 +27,7 @@ int main() {
 
 		DWORD frameEndTime = GetTickCount();
 
+		// 稳定帧率为全局变量FPS
 		Sleep(max(0, (1000 / FPS) - (frameEndTime - frameStartTime)));
 	}
 
