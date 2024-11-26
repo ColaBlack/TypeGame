@@ -1,6 +1,12 @@
 #include<graphics.h>
 #include"Scene.h"
 #include"MenuScene.h"
+#include"GameScene.h"
+#include"SceneManager.h"
+
+Scene* menuScene = nullptr;
+Scene* gameScene = nullptr;
+SceneManager sceneManager;
 
 int main() {
 	const int WIDTH = 1280;
@@ -9,11 +15,13 @@ int main() {
 
 	// 初始化游戏
 	initgraph(WIDTH, HEIGHT,EW_SHOWCONSOLE);
+	menuScene=new MenuScene();
+	gameScene=new GameScene();
 	ExMessage msg;
 	BeginBatchDraw();
 
-	Scene* currentScene = new MenuScene();
-	currentScene->onEnter();
+	// 切换到菜单场景
+	sceneManager.SetCurrentScene(menuScene);
 
 	// 帧循环
 	while (true) {
@@ -22,16 +30,16 @@ int main() {
 
 		// 事件循环
 		while (peekmessage(&msg)) {
-			currentScene->onEvent(msg);
+			sceneManager.onEvent(msg);
 		}
 
 		static DWORD lastTickTime = GetTickCount();
 		DWORD currentTickTime = GetTickCount();
-		currentScene->onUpdate(currentTickTime-lastTickTime);
+		sceneManager.onUpdate(currentTickTime-lastTickTime);
 		lastTickTime = currentTickTime;
 
 		cleardevice();
-		currentScene->onDraw();
+		sceneManager.onDraw();
 
 		FlushBatchDraw();
 

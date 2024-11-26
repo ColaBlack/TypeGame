@@ -133,6 +133,8 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="GameSceneEnums.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

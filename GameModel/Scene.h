@@ -1,7 +1,7 @@
 #pragma once
 #include<graphics.h>
 
-class Scene{
+class Scene {
 public:
 	Scene() = default;
 	~Scene() = default;
@@ -9,6 +9,6 @@ public:
 	virtual void onEnter() {};
 	virtual void onUpdate(int deltaTime) {};
 	virtual void onDraw() {};
-	virtual void onEvent(const ExMessage & msg) {};
+	virtual void onEvent(const ExMessage& msg) {};
 	virtual void onExit() {};
 };

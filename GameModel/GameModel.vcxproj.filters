@@ -29,5 +29,11 @@
     <ClInclude Include="GameScene.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSceneEnums.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
