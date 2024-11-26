@@ -133,6 +133,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Atlas.h" />
     <ClInclude Include="AtlasUtils.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ImgUtils.h" />
     <ClInclude Include="loadResource.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="GameSceneEnums.h" />
     <ClInclude Include="SelectorScene.h" />
+    <ClInclude Include="vector2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

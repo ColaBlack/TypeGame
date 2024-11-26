@@ -25,6 +25,9 @@
     <Filter Include="头文件\animation">
       <UniqueIdentifier>{f8507ad5-e734-49f2-a3ec-b11936d49710}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\camera">
+      <UniqueIdentifier>{9f96c8d4-7b8d-4745-b02e-c8ad135bf7d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -67,6 +70,12 @@
     </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>头文件\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>头文件\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2d.h">
+      <Filter>头文件\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
