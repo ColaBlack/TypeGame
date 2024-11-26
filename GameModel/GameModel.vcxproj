@@ -134,6 +134,7 @@
     <ClInclude Include="AtlasUtils.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ImgUtils.h" />
+    <ClInclude Include="loadResource.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="OverScene.h" />
     <ClInclude Include="Scene.h" />

@@ -5,6 +5,7 @@
 #include"GameScene.h"
 #include"OverScene.h"
 #include"SceneManager.h"
+#include"loadResource.h"
 
 
 Scene* menuScene = nullptr;
@@ -19,6 +20,7 @@ int main() {
 	const int FPS = 60;
 
 	// 初始化游戏
+	loadResource();
 	initgraph(WIDTH, HEIGHT, EW_SHOWCONSOLE);
 	menuScene = new MenuScene();
 	selectorScene = new SelectorScene();

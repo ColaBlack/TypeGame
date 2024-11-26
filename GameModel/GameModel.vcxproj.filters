@@ -59,5 +59,8 @@
     <ClInclude Include="AtlasUtils.h">
       <Filter>头文件\utils</Filter>
     </ClInclude>
+    <ClInclude Include="loadResource.h">
+      <Filter>头文件\resource</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
