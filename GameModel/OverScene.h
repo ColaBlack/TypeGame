@@ -10,7 +10,7 @@ public:
 	void onEnter() override {
 		std::cout << "进入结算场景" << std::endl;
 	};
-	void onUpdate(int deltaTime) override {
+	void onUpdate(const int deltaTime) override {
 		std::cout << "更新结算场景" << std::endl;
 	};
 	void onDraw() override {

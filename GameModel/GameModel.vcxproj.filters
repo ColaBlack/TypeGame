@@ -16,6 +16,9 @@
     <Filter Include="头文件\scene">
       <UniqueIdentifier>{ab311df9-067a-4b0a-a179-7fbffa43f793}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Resource">
+      <UniqueIdentifier>{559802ca-b7b5-4b9a-addb-1d4811406b1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -38,11 +41,14 @@
     <ClInclude Include="SelectorScene.h">
       <Filter>头文件\scene</Filter>
     </ClInclude>
-    <ClInclude Include="SceneManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="OverScene.h">
       <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>头文件\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Atlas.h">
+      <Filter>头文件\Resource</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

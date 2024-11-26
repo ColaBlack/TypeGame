@@ -22,7 +22,7 @@ public:
 	}
 
 	// 切换场景
-	void changeScene(SceneEnums SceneEnum) {
+	void changeScene(const SceneEnums SceneEnum) {
 		if (currentScene) {
 			currentScene->onExit();
 		}
@@ -44,7 +44,7 @@ public:
 		currentScene->onEnter();
 	}
 
-	void onUpdate(int deltaTime) {
+	void onUpdate(const int deltaTime) {
 		if (currentScene) {
 			currentScene->onUpdate(deltaTime);
 		}
