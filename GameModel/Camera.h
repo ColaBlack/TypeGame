@@ -5,11 +5,11 @@ class Camera {
 public:
 	Camera() = default;
 	~Camera() = default;
-	
+
 	// 重置摄像机位置为(0,0)
 	void reset() {
-		this->position.x=0;
-		this->position.y=0;
+		this->position.x = 0;
+		this->position.y = 0;
 	}
 
 	void onUpdate(int deltaTime) {

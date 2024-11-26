@@ -143,6 +143,7 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="GameSceneEnums.h" />
     <ClInclude Include="SelectorScene.h" />
+    <ClInclude Include="timer.h" />
     <ClInclude Include="vector2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
