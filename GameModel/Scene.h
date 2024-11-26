@@ -1,8 +1,7 @@
 #pragma once
 #include<graphics.h>
 
-class Scene
-{
+class Scene{
 public:
 	Scene() = default;
 	~Scene() = default;
