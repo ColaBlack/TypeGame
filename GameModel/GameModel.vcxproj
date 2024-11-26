@@ -130,6 +130,7 @@
     <ClCompile Include="GameMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
     <ClInclude Include="Atlas.h" />
     <ClInclude Include="AtlasUtils.h" />
     <ClInclude Include="GameScene.h" />

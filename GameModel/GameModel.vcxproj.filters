@@ -22,6 +22,9 @@
     <Filter Include="头文件\resource">
       <UniqueIdentifier>{559802ca-b7b5-4b9a-addb-1d4811406b1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\animation">
+      <UniqueIdentifier>{f8507ad5-e734-49f2-a3ec-b11936d49710}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -61,6 +64,9 @@
     </ClInclude>
     <ClInclude Include="loadResource.h">
       <Filter>头文件\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>头文件\animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
