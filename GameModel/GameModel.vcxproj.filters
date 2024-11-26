@@ -26,5 +26,8 @@
     <ClInclude Include="MenuScene.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
