@@ -16,7 +16,10 @@
     <Filter Include="头文件\scene">
       <UniqueIdentifier>{ab311df9-067a-4b0a-a179-7fbffa43f793}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Resource">
+    <Filter Include="头文件\utils">
+      <UniqueIdentifier>{890b0cac-6d7a-46ad-8669-fb262f64ab15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\resource">
       <UniqueIdentifier>{559802ca-b7b5-4b9a-addb-1d4811406b1d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -48,7 +51,13 @@
       <Filter>头文件\scene</Filter>
     </ClInclude>
     <ClInclude Include="Atlas.h">
-      <Filter>头文件\Resource</Filter>
+      <Filter>头文件\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="ImgUtils.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="AtlasUtils.h">
+      <Filter>头文件\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
