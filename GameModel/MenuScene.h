@@ -16,7 +16,7 @@ public:
 	void onUpdate(const int deltaTime) override {
 		std::cout << "更新菜单场景" << std::endl;
 	};
-	void onDraw() override {
+	void onDraw(const Camera& camera) override {
 		outtextxy(100, 100, _T("当前为菜单场景，按任意键切换到游戏场景"));
 	};
 	void onEvent(const ExMessage& msg) override {

@@ -22,7 +22,7 @@ public:
 		this->camera.onUpdate(deltaTime);
 		this->animationPlayerRight.onUpdate(deltaTime);
 	};
-	void onDraw() override {
+	void onDraw(const Camera& camera) override {
 		const Vector2D& position = this->camera.getPosition();
 		this->animationPlayerRight.onDraw(500 - position.x, 500 - position.y);
 	};

@@ -139,6 +139,7 @@
     <ClInclude Include="loadResource.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="OverScene.h" />
+    <ClInclude Include="PlayerTypeEnums.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />

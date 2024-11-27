@@ -51,9 +51,9 @@ public:
 		}
 	}
 
-	void onDraw() {
+	void onDraw(const Camera& camera) {
 		if (currentScene) {
-			currentScene->onDraw();
+			currentScene->onDraw(camera);
 		}
 	}
 

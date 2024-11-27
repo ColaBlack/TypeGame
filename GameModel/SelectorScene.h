@@ -13,7 +13,7 @@ public:
 	void onUpdate(const int deltaTime) override {
 		std::cout << "更新角色选择场景" << std::endl;
 	};
-	void onDraw() override {
+	void onDraw(const Camera& camera) override {
 		outtextxy(100, 100, _T("角色选择场景"));
 	};
 	void onEvent(const ExMessage& msg) override {

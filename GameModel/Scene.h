@@ -1,5 +1,6 @@
 #pragma once
 #include<graphics.h>
+#include"Camera.h"
 
 class Scene {
 public:
@@ -8,7 +9,7 @@ public:
 
 	virtual void onEnter() {};
 	virtual void onUpdate(const int deltaTime) {};
-	virtual void onDraw() {};
+	virtual void onDraw(const Camera& camera) {};
 	virtual void onEvent(const ExMessage& msg) {};
 	virtual void onExit() {};
 };

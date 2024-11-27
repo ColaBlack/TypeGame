@@ -13,7 +13,7 @@ public:
 	void onUpdate(const int deltaTime) override {
 		std::cout << "更新结算场景" << std::endl;
 	};
-	void onDraw() override {
+	void onDraw(const Camera& camera) override {
 		outtextxy(100, 100, _T("结算场景"));
 	};
 	void onEvent(const ExMessage& msg) override {

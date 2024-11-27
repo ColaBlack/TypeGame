@@ -21,10 +21,8 @@ public:
 
 	void onUpdate(int deltaTime) {
 		this->shakeTimer.onUpdate(deltaTime);
-		std::cout<<this->isShaking<<std::endl;
 		if (this->isShaking) {
 			this->position.x = (rand() % 100 - 50) / 50 * this->shakeAmount;
-			std::cout << this->position.x << std::endl;
 			this->position.y = (rand() % 100 - 50) / 50 * this->shakeAmount;
 		}
 		//const Vector2D speed = { -0.35,0 };

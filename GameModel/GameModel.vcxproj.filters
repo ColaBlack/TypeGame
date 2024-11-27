@@ -31,6 +31,9 @@
     <Filter Include="资源文件\player">
       <UniqueIdentifier>{88aa6cab-8e20-42d7-85cb-4ed1dbd5b639}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\player">
+      <UniqueIdentifier>{175f6f0c-e3a2-4f64-a916-b05b2e3c1659}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerTypeEnums.h">
+      <Filter>头文件\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

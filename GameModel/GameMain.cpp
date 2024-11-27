@@ -13,6 +13,7 @@ Scene* selectorScene = nullptr;
 Scene* gameScene = nullptr;
 Scene* overScene = nullptr;
 SceneManager sceneManager;
+Camera mainCamera;
 
 int main() {
 	const int WIDTH = 1280;
@@ -48,7 +49,7 @@ int main() {
 		lastTickTime = currentTickTime;
 
 		cleardevice();
-		sceneManager.onDraw();
+		sceneManager.onDraw(mainCamera);
 
 		FlushBatchDraw();
 
