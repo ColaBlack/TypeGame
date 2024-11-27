@@ -48,9 +48,9 @@ public:
 			// 并且计时器不是只运行一次，
 			// 或者计时器只允许运行一次但还没有被触发过
 			// 则在回调函数村存在的情况下运行回调函数
-			if (((!this->oneShot||(this->oneShot&&!this->hasShotted)))&&this->onFinishCallback){
+			if (((!this->oneShot || (this->oneShot && !this->hasShotted))) && this->onFinishCallback) {
 				this->onFinishCallback();
-		}
+			}
 			this->hasShotted = true;
 			this->passTime = 0;
 		}
