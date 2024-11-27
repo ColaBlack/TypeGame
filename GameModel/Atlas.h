@@ -9,11 +9,11 @@ public:
 	~Atlas() = default;
 
 	// 添加图像到图集
-	void loadFromFile(const LPCTSTR pathTemplate, const int num) {
+	void loadFromFile(const LPCTSTR pathTemplate, const int numOfImages) {
 		images.clear();
-		images.resize(num);
+		images.resize(numOfImages);
 		TCHAR path[MAX_PATH];
-		for (int i = 1; i <= num; i++) {
+		for (int i = 1; i <= numOfImages; i++) {
 			wsprintf(path, pathTemplate, i);
 			loadimage(&images[i - 1], path);
 		}

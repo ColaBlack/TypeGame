@@ -35,6 +35,7 @@ public:
 			break;
 		case SceneEnums::GAME:
 			currentScene = gameScene;
+			break;
 		case SceneEnums::OVER:
 			currentScene = overScene;
 			break;

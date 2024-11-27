@@ -21,11 +21,14 @@ public:
 
 	void onUpdate(int deltaTime) {
 		this->shakeTimer.onUpdate(deltaTime);
-
+		std::cout<<this->isShaking<<std::endl;
 		if (this->isShaking) {
 			this->position.x = (rand() % 100 - 50) / 50 * this->shakeAmount;
+			std::cout << this->position.x << std::endl;
 			this->position.y = (rand() % 100 - 50) / 50 * this->shakeAmount;
 		}
+		//const Vector2D speed = { -0.35,0 };
+		//this->position += speed * deltaTime;
 	}
 
 	const Vector2D& getPosition() const {
@@ -33,10 +36,10 @@ public:
 	}
 
 	//抖动摄像机
-	void shake(double amount, int duration) {
+	void shake(double amount, int shakeTime) {
 		this->shakeAmount = amount;
 		this->isShaking = true;
-		this->shakeTimer.setWaitTime(duration);
+		this->shakeTimer.setWaitTime(shakeTime);
 		this->shakeTimer.start();
 	}
 private:

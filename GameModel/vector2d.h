@@ -33,7 +33,7 @@ public:
 		return Vector2D(this->x + other.x, this->y + other.y);
 	}
 
-	Vector2D operator+=(const Vector2D& other) {
+	void operator+=(const Vector2D& other) {
 		this->x += other.x;
 		this->y += other.y;
 	}
@@ -42,7 +42,7 @@ public:
 		return Vector2D(this->x - other.x, this->y - other.y);
 	}
 
-	Vector2D operator-=(const Vector2D& other) {
+	void operator-=(const Vector2D& other) {
 		this->x -= other.x;
 		this->y -= other.y;
 	}
@@ -55,7 +55,7 @@ public:
 		return this->x * other.x + this->y * other.y;
 	}
 
-	Vector2D operator*=(const double scalar) {
+	void operator*=(const double scalar) {
 		this->x *= scalar;
 		this->y *= scalar;
 	}
@@ -64,7 +64,7 @@ public:
 		return Vector2D(x / scalar, y / scalar);
 	}
 
-	Vector2D operator/=(const  double scalar) {
+	void operator/=(const  double scalar) {
 		this->x /= scalar;
 		this->y /= scalar;
 	}
