@@ -28,6 +28,11 @@ public:
 		return Vector2D(this->x / len, this->y / len);
 	}
 
+	//是否接近
+	bool approx(const Vector2D& other, double epsilon = 1e-6) const {
+		return abs(this->x - other.x) < epsilon && abs(this->y - other.y) < epsilon;
+	}
+
 	//一大批运算符重载
 	Vector2D operator+(const Vector2D& other) const {
 		return Vector2D(this->x + other.x, this->y + other.y);

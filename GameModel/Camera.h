@@ -4,13 +4,15 @@
 
 class Camera {
 public:
-	Camera() {
-		this->shakeTimer.setOneShot(true);
-		this->shakeTimer.setOnFinishCallback([this]() {
-			this->isShaking = false;
-			reset();
-			});
-	}
+	////抖动的构造函数
+	//Camera() {
+	//	this->shakeTimer.setOneShot(true);
+	//	this->shakeTimer.setOnFinishCallback([this]() {
+	//		this->isShaking = false;
+	//		reset();
+	//		});
+	//}
+	Camera() = default;
 	~Camera() = default;
 
 	// 重置摄像机位置为(0,0)
@@ -40,9 +42,37 @@ public:
 		this->shakeTimer.setWaitTime(shakeTime);
 		this->shakeTimer.start();
 	}
+
+	// 使摄像机看向目标位置
+	void lookAt(const Vector2D& target) {
+		this->position = target - this->size / 2.0;
+	}
+
+	// 设置摄像机大小
+	void setSize(const Vector2D& size) {
+		this->size = size;
+	}
+
+	//获取摄像机大小
+	const Vector2D& getSize() const {
+		return this->size;
+	}
+
+	// 设置摄像机位置
+	void setPosition(const Vector2D& position) {
+		this->position = position;
+	}
+
+	//获取摄像机位置
+	const Vector2D& getPosition() const {
+		return this->position;
+	}
 private:
 	// 摄像机位置
 	Vector2D position;
+
+	// 摄像机大小
+	Vector2D size;
 
 	// 摄像机抖动计时器
 	Timer shakeTimer;
