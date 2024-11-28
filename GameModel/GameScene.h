@@ -14,9 +14,7 @@ public:
 	~GameScene() = default;
 
 	void onEnter() override {
-		this->animationPlayerRight.setAtlas(&atlasPlayerRight);
-		this->animationPlayerRight.setInterval(75);
-		this->animationPlayerRight.setLoop(true);
+
 	};
 	void onUpdate(const int deltaTime) override {
 		this->camera.onUpdate(deltaTime);
@@ -24,7 +22,6 @@ public:
 	};
 	void onDraw(const Camera& camera) override {
 		const Vector2D& position = this->camera.getPosition();
-		this->animationPlayerRight.onDraw(500 - position.x, 500 - position.y);
 	};
 	void onEvent(const ExMessage& msg) override {
 
