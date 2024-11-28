@@ -52,7 +52,7 @@ public:
 				this->onFinishCallback();
 			}
 			this->hasShotted = true;
-			this->passTime = 0;
+			this->passTime -= this->waitTime;
 		}
 	}
 private:

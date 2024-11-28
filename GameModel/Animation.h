@@ -2,83 +2,127 @@
 #include "Atlas.h"
 #include"ImgUtils.h"
 #include<functional>
+#include"timer.h"
 
 class Animation {
 public:
-	Animation() = default;
-	~Animation() = default;
-
-	// 设置动画贴图集
-	void setAtlas(Atlas* atlas) {
-		reset();
-		this->atlas = atlas;
-	}
-
-	// 播放动画
-	void onUpdate(int deltaTime) {
-		this->timer += deltaTime;
-		if (this->timer >= this->frameInterval) {
-			this->timer = 0;
+	Animation() {
+		this->timer.setOneShot(false);
+		this->timer.setOnFinishCallback([&]() {
 			this->frameIndex++;
-			if (this->frameIndex >= this->atlas->getSize() - 1) {
-				this->frameIndex = this->loop ? 0 : (atlas->getSize() - 1);
-				if (!this->loop && this->onDie) {
-					this->onDie();
+			if (this->frameIndex >= this->frames.size()) {
+				this->frameIndex = loop ? 0 : (int)frames.size() - 1;
+				if (!loop && this->onFinished) {
+					this->onFinished();
 				}
 			}
-		}
-	}
+			});
+	};
 
-	// 绘制动画
-	void onDraw(int x, int y) {
-		putImageAlpha(this->atlas->getImage(frameIndex), x, y);
-	}
+	~Animation() = default;
 
-	// 设置死亡回调函数
-	void setOnDie(std::function<void()> onDie) {
-		this->onDie = onDie;
-	}
-	// 重置动画播放进度
+	// 重置动画
 	void reset() {
-		timer = 0;
-		frameIndex = 0;
+		this->frameIndex = 0;
+		this->timer.reset();
 	}
 
-	// 设置动画是否循环播放
+	void setPosition(const Vector2D& position) {
+		this->position = position;
+	}
+
 	void setLoop(bool loop) {
 		this->loop = loop;
 	}
 
-	// 设置帧间隔
-	void setInterval(int interval) {
-		this->frameInterval = interval;
+	// 设置动画帧间隔
+	void setInterval(float interval) {
+		this->timer.setWaitTime(interval);
 	}
 
-	// 设置当前帧索引
-	int getFrameIndex() {
-		return this->frameIndex;
+	// 设置动画播放结束的回调函数
+	void setOnFinished(const std::function<void()>& onFinished) {
+		this->onFinished = onFinished;
 	}
 
-	// 获取当前播放的动画帧
-	IMAGE* getCurrentFrame() {
-		return atlas->getImage(frameIndex);
+	// 添加动画帧，带裁切功能
+	void addFrame(IMAGE* image, int num) {
+		int w = image->getwidth();
+		int h = image->getheight();
+		int frameWidth = w / num;
+
+		for (int i = 0; i < num; i++) {
+			Rect rect;
+			rect.x = i * frameWidth;
+			rect.y = 0;
+			rect.w = frameWidth;
+			rect.h = h;
+
+			this->frames.emplace_back(image, rect);
+		}
 	}
 
-	// 判断动画是否结束播放
-	bool hasFinished() {
-		return this->loop ? false : (frameIndex >= atlas->getSize() - 1);
+	// 从图集中添加动画帧，不带裁切功能
+	void addFrame(Atlas* atlas) {
+		for (int i = 0; i < atlas->getSize(); i++) {
+			IMAGE* image = atlas->getImage(i);
+			int w = image->getwidth();
+			int h = image->getheight();
+
+			Rect rect;
+			rect.x = 0;
+			rect.y = 0;
+			rect.w = w;
+			rect.h = h;
+
+			this->frames.emplace_back(image, rect);
+		}
+	}
+
+	void onUpdate(double deltaTime) {
+		timer.onUpdate(deltaTime);
+	}
+
+	void onDraw(const Camera& camera) {
+		const Frame& frame = this->frames[this->frameIndex];
+
+		Rect rect = frame.rect;
+		rect.x = (int)this->position.x - frame.rect.w / 2;
+		rect.y = (int)this->position.y - frame.rect.h / 2;
+		rect.w = frame.rect.w;
+		rect.h = frame.rect.h;
+
+		putImageAlphaCam(camera, frame.image, &rect);
 	}
 private:
-	Atlas* atlas = nullptr;
+
+	// 动画帧结构体
+	struct Frame {
+		Rect rect;
+		IMAGE* image = nullptr;
+
+		Frame() = default;
+		Frame(IMAGE* image, const  Rect& rect) : rect(rect), image(image) {}
+
+		~Frame() = default;
+	};
+
+	// 动画帧集合
+	std::vector<Frame> frames;
+
 	// 计时器
-	int timer = 0;
-	//帧间隔
-	int frameInterval = 0;
+	Timer timer;
+
+	// 动画位置
+	Vector2D position;
+
 	//当前帧索引
 	int frameIndex = 0;
+
 	//是否需要循环播放
 	bool loop = true;
-	//游戏对象死亡的回调函数
-	std::function<void()> onDie = nullptr;
+
+	//动画播放结束的回调函数
+	std::function<void()> onFinished = nullptr;
 public:
 };
