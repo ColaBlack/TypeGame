@@ -1,3 +1,4 @@
+#include"../libs/httplib.h"
 #include<graphics.h>
 #include"Scene.h"
 #include"MenuScene.h"
@@ -8,10 +9,7 @@
 #include"loadResource.h"
 
 
-Scene* menuScene = nullptr;
-Scene* selectorScene = nullptr;
 Scene* gameScene = nullptr;
-Scene* overScene = nullptr;
 SceneManager sceneManager;
 Camera mainCamera;
 
@@ -23,15 +21,12 @@ int main() {
 	// 初始化游戏
 	loadResource();
 	initgraph(WIDTH, HEIGHT, EW_SHOWCONSOLE);
-	menuScene = new MenuScene();
-	selectorScene = new SelectorScene();
 	gameScene = new GameScene();
-	overScene = new OverScene();
 	ExMessage msg;
 	BeginBatchDraw();
 
 	// 切换到菜单场景
-	sceneManager.SetCurrentScene(menuScene);
+	sceneManager.SetCurrentScene(gameScene);
 
 	// 帧循环
 	while (true) {
@@ -55,7 +50,9 @@ int main() {
 
 		DWORD frameEndTime = GetTickCount();
 		// 稳定帧率为全局变量FPS
-		Sleep(max(0, (1000 / FPS) - (frameEndTime - frameStartTime)));
+		if (1000 / FPS > (frameEndTime - frameStartTime)) {
+			Sleep(1000 / FPS - (frameEndTime - frameStartTime));
+		}
 	}
 
 	EndBatchDraw();

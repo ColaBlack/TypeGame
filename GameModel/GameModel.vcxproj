@@ -148,16 +148,9 @@
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="GameSceneEnums.h" />
     <ClInclude Include="SelectorScene.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2d.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resource\player_left_0.png" />
-    <Image Include="resource\player_left_1.png" />
-    <Image Include="resource\player_left_2.png" />
-    <Image Include="resource\player_left_3.png" />
-    <Image Include="resource\player_left_4.png" />
-    <Image Include="resource\player_left_5.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

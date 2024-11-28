@@ -28,14 +28,14 @@
     <Filter Include="头文件\camera">
       <UniqueIdentifier>{9f96c8d4-7b8d-4745-b02e-c8ad135bf7d2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="资源文件\player">
-      <UniqueIdentifier>{88aa6cab-8e20-42d7-85cb-4ed1dbd5b639}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\player">
       <UniqueIdentifier>{175f6f0c-e3a2-4f64-a916-b05b2e3c1659}</UniqueIdentifier>
     </Filter>
     <Filter Include="头文件\gameObject">
       <UniqueIdentifier>{4b3d4513-648e-413b-8e22-b047ba0b4c92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\stage">
+      <UniqueIdentifier>{3c53f972-c087-4044-856d-97c064b3cf33}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -104,25 +104,8 @@
     <ClInclude Include="Player.h">
       <Filter>头文件\player</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resource\player_left_0.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
-    <Image Include="resource\player_left_1.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
-    <Image Include="resource\player_left_2.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
-    <Image Include="resource\player_left_3.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
-    <Image Include="resource\player_left_4.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
-    <Image Include="resource\player_left_5.png">
-      <Filter>资源文件\player</Filter>
-    </Image>
+    <ClInclude Include="Stage.h">
+      <Filter>头文件\stage</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
