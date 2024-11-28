@@ -92,6 +92,9 @@
     <ClInclude Include="PlayerTypeEnums.h">
       <Filter>头文件\player</Filter>
     </ClInclude>
+    <ClInclude Include="audioUtils.h">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="resource\player_left_0.png">

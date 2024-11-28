@@ -133,6 +133,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Atlas.h" />
     <ClInclude Include="AtlasUtils.h" />
+    <ClInclude Include="audioUtils.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ImgUtils.h" />

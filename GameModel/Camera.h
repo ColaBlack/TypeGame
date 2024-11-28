@@ -31,10 +31,6 @@ public:
 		//this->position += speed * deltaTime;
 	}
 
-	const Vector2D& getPosition() const {
-		return this->position;
-	}
-
 	//抖动摄像机
 	void shake(double amount, int shakeTime) {
 		this->shakeAmount = amount;
