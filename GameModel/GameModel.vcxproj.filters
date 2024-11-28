@@ -34,6 +34,9 @@
     <Filter Include="头文件\player">
       <UniqueIdentifier>{175f6f0c-e3a2-4f64-a916-b05b2e3c1659}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\gameObject">
+      <UniqueIdentifier>{4b3d4513-648e-413b-8e22-b047ba0b4c92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameMain.cpp">
@@ -94,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="audioUtils.h">
       <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>头文件\gameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>头文件\player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
