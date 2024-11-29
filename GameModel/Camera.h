@@ -13,6 +13,9 @@ public:
 	//		});
 	//}
 	Camera() = default;
+	Camera(Vector2D size) {
+		this->size = size;
+	}
 	~Camera() = default;
 
 	// 重置摄像机位置为(0,0)

@@ -108,13 +108,13 @@ private:
 	};
 
 	// 动画帧集合
-	std::vector<Frame> frames;
+	std::vector<Frame> frames= {};
 
 	// 计时器
-	Timer timer;
+	Timer timer= Timer();
 
 	// 动画位置
-	Vector2D position;
+	Vector2D position= Vector2D();
 
 	//当前帧索引
 	int frameIndex = 0;

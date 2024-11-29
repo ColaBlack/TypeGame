@@ -43,6 +43,18 @@ public:
 			}
 		}
 		else {
+			if (abs(this->velocity.y) > 1e-10) {
+				this->facing = Facing::DOWN;
+			}
+			if (abs(this->velocity.x) > 1e-10) {
+				this->facing = Facing::RIGHT;
+			}
+			if (this->velocity.y < 0) {
+				this->facing = Facing::UP;
+			}
+			if (this->velocity.x < 0) {
+				this->facing = Facing::LEFT;
+			}
 			switch (this->facing) {
 			case Facing::UP:
 				this->currentAnimation = this->atlasRunUp;
@@ -82,35 +94,27 @@ public:
 	Player(Atlas* atlasIdleUp, Atlas* atlasIdleDown, Atlas* atlasIdleLeft, Atlas* atlasIdleRight,
 		Atlas* atlasRunUp, Atlas* atlasRunDown, Atlas* atlasRunLeft, Atlas* atlasRunRight) {
 		// 初始化加载动画资源
-		this->atlasIdleUp->setLoop(true);
 		this->atlasIdleUp->setInterval(0.1);
 		this->atlasIdleUp->addFrame(atlasIdleUp);
 
-		this->atlasIdleDown->setLoop(true);
 		this->atlasIdleDown->setInterval(0.1);
 		this->atlasIdleDown->addFrame(atlasIdleDown);
 
-		this->atlasIdleLeft->setLoop(true);
 		this->atlasIdleLeft->setInterval(0.1);
 		this->atlasIdleLeft->addFrame(atlasIdleLeft);
 
-		this->atlasIdleRight->setLoop(true);
 		this->atlasIdleRight->setInterval(0.1);
 		this->atlasIdleRight->addFrame(atlasIdleRight);
 
-		this->atlasRunUp->setLoop(true);
 		this->atlasRunUp->setInterval(0.1);
 		this->atlasRunUp->addFrame(atlasRunUp);
 
-		this->atlasRunDown->setLoop(true);
 		this->atlasRunDown->setInterval(0.1);
 		this->atlasRunDown->addFrame(atlasRunDown);
 
-		this->atlasRunLeft->setLoop(true);
 		this->atlasRunLeft->setInterval(0.1);
 		this->atlasRunLeft->addFrame(atlasRunLeft);
 
-		this->atlasRunRight->setLoop(true);
 		this->atlasRunRight->setInterval(0.1);
 		this->atlasRunRight->addFrame(atlasRunRight);
 
@@ -137,13 +141,13 @@ private:
 	const double speedRun = 100;
 
 	//玩家位置
-	Vector2D position;
+	Vector2D position = Vector2D(842, 842);
 
 	//玩家速度矢量
-	Vector2D velocity;
+	Vector2D velocity = Vector2D(0, 0);
 
 	//玩家目标位置
-	Vector2D positionTarget;
+	Vector2D positionTarget = Vector2D(0, 0);
 
 	//当前正在播放的动画
 	Animation* currentAnimation = nullptr;
@@ -152,12 +156,12 @@ private:
 	Facing facing = Facing::DOWN;
 
 	//玩家动画
-	Animation* atlasIdleUp;
-	Animation* atlasIdleDown;
-	Animation* atlasIdleLeft;
-	Animation* atlasIdleRight;
-	Animation* atlasRunUp;
-	Animation* atlasRunDown;
-	Animation* atlasRunLeft;
-	Animation* atlasRunRight;
+	Animation* atlasIdleUp = new Animation();
+	Animation* atlasIdleDown = new Animation();
+	Animation* atlasIdleLeft = new Animation();
+	Animation* atlasIdleRight = new Animation();
+	Animation* atlasRunUp = new Animation();
+	Animation* atlasRunDown = new Animation();
+	Animation* atlasRunLeft = new Animation();
+	Animation* atlasRunRight = new Animation();
 };

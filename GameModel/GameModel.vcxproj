@@ -104,6 +104,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,7 +134,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Atlas.h" />
     <ClInclude Include="AtlasUtils.h" />
-    <ClInclude Include="audioUtils.h" />
+    <ClInclude Include="AudioUtils.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="ImgUtils.h" />
@@ -149,6 +150,7 @@
     <ClInclude Include="GameSceneEnums.h" />
     <ClInclude Include="SelectorScene.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StringUtils.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="vector2d.h" />
   </ItemGroup>

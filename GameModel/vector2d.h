@@ -29,7 +29,7 @@ public:
 	}
 
 	//是否接近
-	bool approx(const Vector2D& other, double epsilon = 1e-6) const {
+	bool approx(const Vector2D& other, double epsilon = 1e-10) const {
 		return abs(this->x - other.x) < epsilon && abs(this->y - other.y) < epsilon;
 	}
 

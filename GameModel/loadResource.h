@@ -34,28 +34,28 @@ IMAGE imageBackground;
 //服务器地址
 std::string address;
 
-void loadResource(HWND hwnd) {
+void loadResource() {
 	AddFontResourceEx(_T("resources/IPix.ttf"), FR_PRIVATE, NULL);
 
 	//玩家1资源
-	atlas1PIdleUp.loadFromFile(_T("resources/hajimi_idle_back_%d.png"), 4);
-	atlas1PIdleDown.loadFromFile(_T("resources/hajimi_idle_front_%d.png"), 4);
-	atlas1PIdleLeft.loadFromFile(_T("resources/hajimi_idle_left_%d.png"), 4);
-	atlas1PIdleRight.loadFromFile(_T("resources/hajimi_idle_right_%d.png"), 4);
+	atlas1PIdleUp.loadFromFile(_T("resources/hajimi_idle_back_%d.png"), 1);
+	atlas1PIdleDown.loadFromFile(_T("resources/hajimi_idle_front_%d.png"), 1);
+	atlas1PIdleLeft.loadFromFile(_T("resources/hajimi_idle_left_%d.png"), 1);
+	atlas1PIdleRight.loadFromFile(_T("resources/hajimi_idle_right_%d.png"), 1);
 	atlas1PRunUp.loadFromFile(_T("resources/hajimi_run_back_%d.png"), 4);
 	atlas1PRunDown.loadFromFile(_T("resources/hajimi_run_front_%d.png"), 4);
 	atlas1PRunLeft.loadFromFile(_T("resources/hajimi_run_left_%d.png"), 4);
 	atlas1PRunRight.loadFromFile(_T("resources/hajimi_run_right_%d.png"), 4);
 
 	//玩家2资源
-	atlas2PIdleUp.loadFromFile(_T("resources/hajimi_idle_back_%d.png"), 4);
-	atlas2PIdleDown.loadFromFile(_T("resources/hajimi_idle_front_%d.png"), 4);
-	atlas2PIdleLeft.loadFromFile(_T("resources/hajimi_idle_left_%d.png"), 4);
-	atlas2PIdleRight.loadFromFile(_T("resources/hajimi_idle_right_%d.png"), 4);
-	atlas2PRunUp.loadFromFile(_T("resources/hajimi_run_back_%d.png"), 4);
-	atlas2PRunDown.loadFromFile(_T("resources/hajimi_run_front_%d.png"), 4);
-	atlas2PRunLeft.loadFromFile(_T("resources/hajimi_run_left_%d.png"), 4);
-	atlas2PRunRight.loadFromFile(_T("resources/hajimi_run_right_%d.png"), 4);
+	atlas2PIdleUp.loadFromFile(_T("resources/manbo_idle_back_%d.png"), 1);
+	atlas2PIdleDown.loadFromFile(_T("resources/manbo_idle_front_%d.png"), 1);
+	atlas2PIdleLeft.loadFromFile(_T("resources/manbo_idle_left_%d.png"), 1);
+	atlas2PIdleRight.loadFromFile(_T("resources/manbo_idle_right_%d.png"), 1);
+	atlas2PRunUp.loadFromFile(_T("resources/manbo_run_back_%d.png"), 4);
+	atlas2PRunDown.loadFromFile(_T("resources/manbo_run_front_%d.png"), 4);
+	atlas2PRunLeft.loadFromFile(_T("resources/manbo_run_left_%d.png"), 4);
+	atlas2PRunRight.loadFromFile(_T("resources/manbo_run_right_%d.png"), 4);
 
 	//UI资源
 	loadimage(&imageUI1, _T("resources/ui_1.png"));
@@ -81,7 +81,7 @@ void loadResource(HWND hwnd) {
 	std::ifstream file("config.cfg");
 
 	if (!file.good()) {
-		MessageBox(hwnd, _T("配置文件config.cfg无法正常打开！"), _T("错误"), MB_ICONERROR);
+		MessageBox(NULL, _T("配置文件config.cfg无法正常打开！"), _T("错误"), MB_ICONERROR);
 		exit(-1);
 	}
 

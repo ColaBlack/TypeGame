@@ -8,14 +8,17 @@ extern std::mutex mutex;
 // 登录接口
 void userLogin(const httplib::Request& req, httplib::Response& res) {
 	std::lock_guard<std::mutex> lock(mutex);
-
-	if (progress1 >= 0 && progress2 >= 0) {
-		res.set_content("-1", "text/plain");
+	if (progress1 < 0) {
+		progress1 = 0;
+		res.set_content("1", "text/plain");
 		return;
 	}
 	else {
-		res.set_content(progress1 >= 0 ? "1" : "2", "text/plain");
+		progress2 = 0;
+		res.set_content("2", "text/plain");
+		return;
 	}
+	res.set_content("-1", "text/plain");
 }
 
 //获取数据文本接口

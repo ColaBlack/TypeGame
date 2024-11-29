@@ -67,5 +67,5 @@ private:
 	// 计时器是否只运行一次
 	bool oneShot = false;
 	// 计时器到时运行的回调函数
-	std::function<void()> onFinishCallback;
+	std::function<void()> onFinishCallback=nullptr;
 };

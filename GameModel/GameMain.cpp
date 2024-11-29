@@ -20,15 +20,14 @@ int main() {
 
 	// 初始化游戏
 	loadResource();
-	HWND hwnd = initgraph(WIDTH, HEIGHT,);
+	HWND hwnd = initgraph(WIDTH, HEIGHT, EW_SHOWCONSOLE);
 	SetWindowText(hwnd, _T("该程序仅供学习使用，禁止商业用途！"));
 	settextstyle(28, 0, _T("IPix"));
 	setbkmode(TRANSPARENT);
 	gameScene = new GameScene();
 	ExMessage msg;
 	BeginBatchDraw();
-
-	// 切换到菜单场景
+	// 切换到游戏场景
 	sceneManager.SetCurrentScene(gameScene);
 
 	// 帧循环
@@ -46,6 +45,7 @@ int main() {
 		sceneManager.onUpdate(currentTickTime - lastTickTime);
 		lastTickTime = currentTickTime;
 
+		setbkcolor(RGB(0, 0, 0));
 		cleardevice();
 		sceneManager.onDraw(mainCamera);
 
