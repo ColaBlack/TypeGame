@@ -52,14 +52,37 @@ std::atomic<int> progress2 = -1;
 //要打的字数
 int totalChar = 0;
 //要打的全部文本
-std::string text="no text";
+std::string text = "no text";
 //每行的文本
 std::vector<std::string> lineList;
 int lineIndex = 0;
 int charIndex = 0;
 
 //玩家移动路径
-Path path = Path({ {842,842},{1322,842},{1322,442 },{2762,442},{2762,842},{3162,842},{3162,1722},{2122,1722},{2122,1562},{842,1562},{842,842} });
+Path path = Path({ {550,550},{3700,550},{3700,3300},{550,3300},{550,550} });
+
+void updateProgress() {
+	while (true) {
+		using namespace std::chrono;
+
+		std::string route = (playerId == 1) ? "/progress/exchange1" : "/progress/exchange2";
+		std::string body = std::to_string(playerId == 1 ? progress1 : progress2);
+		httplib::Result res = client->Post(route, body, "text/plain");
+		if (!res || res->status != 200) {
+			MessageBox(NULL, _T("网络错误，请检查网络连接"), _T("错误"), MB_OK);
+			exit(-1);
+		}
+		int progress = std::stoi(res->body);
+		if (playerId == 1) {
+			progress2 = progress;
+		}
+		else {
+			progress1 = progress;
+		}
+
+		std::this_thread::sleep_for(nanoseconds(1000000000 / 60));
+	}
+};
 
 class GameScene :public Scene {
 public:
@@ -98,28 +121,7 @@ public:
 		}
 
 		// 新开线程更新游戏进度
-		std::thread([&]() {
-			while (true) {
-				using namespace std::chrono;
-
-				std::string route = (playerId == 1) ? "/progress/exchange1" : "/progress/exchange2";
-				std::string body = std::to_string(playerId == 1 ? progress1 : progress2);
-				httplib::Result res = client->Post(route, body, "text/plain");
-				if (!res || res->status != 200) {
-					MessageBox(NULL, _T("网络错误，请检查网络连接"), _T("错误"), MB_OK);
-					exit(-1);
-				}
-				int progress = std::stoi(res->body);
-				if (playerId == 1) {
-					progress2 = progress;
-				}
-				else {
-					progress1 = progress;
-				}
-
-				std::this_thread::sleep_for(nanoseconds(1000000000 / 60));
-			}
-			}).detach();
+		std::thread(updateProgress).detach();
 
 		this->countDownTimer.setOneShot(false);
 		this->countDownTimer.setWaitTime(1);
@@ -164,6 +166,7 @@ public:
 				stopAudio(_T("bgm"));
 				playAudio(playerId == 1 ? _T("1p_win") : _T("2p_win"));
 				MessageBox(NULL, progress1 >= totalChar ? _T("恭喜玩家1获胜！") : _T("恭喜玩家2获胜！"), _T("游戏结束"), MB_OK);
+				Sleep(2000);
 				exit(0);
 			}
 
